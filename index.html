@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 1</title>
+</head>
+<body>
+    <div id="app">
+        <h2>Задание 1</h2>
+        <p> Создать кнопку "Перевернуть". При клике на кнопку текст кнопки 
+            должен перевернуться и отобразиться в обратном порядке.</p>
+        <button @click="reverseBtnText">{{btnText}}</button>
+
+        <hr />
+
+        <h2>Задание 2</h2>
+        <p>Есть список элементов. Пользователь может добавлять новые элементы 
+           списка c текстом “Новый элемент списка” нажав на кнопку "Добавить".</p>
+        <p>Список элементов: {{items}} </p> 
+        <button @click="addNewItem">Добавить</button>       
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            data() {
+                return {
+                    btnText: 'Перевернуть',
+                    items: [2, 4, 5, 6, 9],
+                }
+            },
+            methods: {
+                reverseBtnText() {
+                    if (this.btnText === 'Перевернуть') {
+                        this.btnText = 'ьтунревереП';
+                    } else {
+                        this.btnText = 'Перевернуть';
+                    }
+                    // let splitString = btnText.split('');
+                    // let reverseString = splitString.reverse();
+                    // let resultString = reverseString.join('');
+                    // return resultString;
+                },
+                addNewItem() {
+                    let userItem = prompt('Новый элемент списка: ');
+                    this.items.push(userItem);
+                    return items;
+                }
+            },
+        }
+
+        Vue.createApp(App).mount('#app');
+    </script>
+
+</body>
+</html>
